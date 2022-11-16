@@ -67,11 +67,11 @@ global $wpdb;
 $charset_collate = $wpdb->get_charset_collate();
 
 // le añado el prefijo a la tabla
-$table_name = $wpdb->prefix . 'dam19';
+$table_name = $wpdb->prefix . 'dam';
 
 // creamos la sentencia sql
 
-$sql = "CREATE TABLE $table_name (
+$sql = "CREATE TABLE IF NOT EXISTS $table_name (
 id mediumint(9) NOT NULL AUTO_INCREMENT,
 time datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
 name tinytext NOT NULL,
